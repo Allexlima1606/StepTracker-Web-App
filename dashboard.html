@@ -1,52 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StepTracker PRO</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StepTracker PRO</title>
 
-<div class="app">
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-  <header class="top-bar">
-    <h1>👣 StepTracker</h1>
-    <button id="logoutBtn" class="logout-mini">Sair</button>
-  </header>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="top-bar">
+        <h1>👣 StepTracker</h1>
+        <button id="logoutBtn" class="logout-mini">Sair</button>
+      </header>
 
-  <section class="rings-container">
+      <!-- Anéis -->
+      <section class="rings-container">
+        <div class="ring move">
+          <div class="ring-inner">
+            <h2 id="steps">0</h2>
+            <span>Move</span>
+          </div>
+        </div>
 
-    <div class="ring move">
-      <div class="ring-inner">
-        <h2 id="steps">0</h2>
-        <span>Move</span>
-      </div>
+        <div class="ring exercise">
+          <div class="ring-inner small" id="exerciseRing">
+            <span>Exercise</span>
+          </div>
+        </div>
+
+        <div class="ring stand">
+          <div class="ring-inner small" id="standRing">
+            <span>Stand</span>
+          </div>
+        </div>
+      </section>
+
+      <p class="email" id="userEmail"></p>
+
+      <!-- Histórico semanal -->
+      <section class="chart-card">
+        <canvas id="weeklyChart"></canvas>
+      </section>
+
+      <!-- Sistema de conquistas -->
+      <section class="achievements-card">
+        <h3>🏆 Conquistas</h3>
+        <ul id="achievementsList">
+          <li>Primeiros 1000 passos</li>
+          <li>Meta diária atingida</li>
+          <li>7 dias consecutivos</li>
+        </ul>
+      </section>
     </div>
 
-    <div class="ring exercise">
-      <div class="ring-inner small">
-        <span>Exercise</span>
-      </div>
-    </div>
-
-    <div class="ring stand">
-      <div class="ring-inner small">
-        <span>Stand</span>
-      </div>
-    </div>
-
-  </section>
-
-  <p class="email" id="userEmail"></p>
-
-  <section class="action-card">
-    <input type="number" id="addSteps" placeholder="Adicionar passos">
-    <button id="addBtn">Adicionar</button>
-  </section>
-
-</div>
-
-<script type="module" src="dashboard.js"></script>
-</body>
+    <script type="module" src="dashboard.js"></script>
+  </body>
 </html>
