@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1c1c1e, #0f0f11 70%);
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+  color: white;
+}
+
+.app {
+  width: 100%;
+  max-width: 430px;
+}
+
+/* TOP BAR */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.top-bar h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.logout-mini {
+  height: 30px;
+  width: 50px;
+  background: rgba(214, 69, 69, 0.527);
+  color: #f6e9e8;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* RINGS SECTION */
+
+.rings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.ring {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.6s ease;
+  animation: fadeIn 1s ease forwards;
+}
+
+.move {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: background 0.8s ease;
+}
+
+.exercise {
+  width: 150px;
+  height: 150px;
+  background: conic-gradient(
+    #32d74b 0deg,
+    #32d74b 180deg,
+    rgba(255, 255, 255, 0.1) 180deg
+  );
+}
+
+.stand {
+  width: 110px;
+  height: 110px;
+  background: conic-gradient(
+    #0a84ff 0deg,
+    #0a84ff 250deg,
+    rgba(255, 255, 255, 0.1) 250deg
+  );
+}
+
+.ring-inner {
+  width: 70%;
+  height: 70%;
+  background: #1c1c1e;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ring-inner.small {
+  font-size: 12px;
+}
+
+.ring-inner h2 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.ring-inner span {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+/* EMAIL */
+
+.email {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+/* ACTION CARD */
+
+.action-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 20px;
+  background: #2c2c2e;
+  color: white;
+  margin-bottom: 12px;
+}
+
+input:focus {
+  outline: none;
+  background: #3a3a3c;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 20px;
+  background: #0a84ff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* MICRO ANIMAÇÕES */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
